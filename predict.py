@@ -1,12 +1,17 @@
 import joblib
 import pandas as pd
+import os
 
-# Load models and encoders (make sure these files exist in models/)
-cathode_clf = joblib.load("models/cathode_model.pkl")
-anode_clf = joblib.load("models/anode_model.pkl")
-feature_encoders = joblib.load("models/feature_encoders.pkl")
-le_cathode = joblib.load("models/label_encoder_cathode.pkl")
-le_anode = joblib.load("models/label_encoder_anode.pkl")
+# Dynamically determine the absolute path to the models directory
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODELS_DIR = os.path.join(BASE_DIR, "models")
+
+# Load models and encoders safely using absolute paths
+cathode_clf = joblib.load(os.path.join(MODELS_DIR, "cathode_model.pkl"))
+anode_clf = joblib.load(os.path.join(MODELS_DIR, "anode_model.pkl"))
+feature_encoders = joblib.load(os.path.join(MODELS_DIR, "feature_encoders.pkl"))
+le_cathode = joblib.load(os.path.join(MODELS_DIR, "label_encoder_cathode.pkl"))
+le_anode = joblib.load(os.path.join(MODELS_DIR, "label_encoder_anode.pkl"))
 
 def preprocess_input(data_dict):
     """
@@ -26,7 +31,6 @@ def predict_products(input_features):
     input_features: dict with keys as above
     Returns: tuple (cathode_product, anode_product)
     """
-
     X = preprocess_input(input_features)
 
     cathode_pred_encoded = cathode_clf.predict(X)[0]
@@ -39,7 +43,7 @@ def predict_products(input_features):
 
 
 if __name__ == "__main__":
-    # Example usage:
+    # Example usage
     sample_input = {
         "cation": "Cu²⁺",
         "anion": "SO₄²⁻",
