@@ -1,0 +1,17 @@
+# Ignore model and data files
+/models/
+/data/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Jupyter Notebooks (if any)
+.ipynb_checkpoints/
+
+# VSCode settings
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
