@@ -1,8 +1,10 @@
 import streamlit as st
-from ml.predict import predict_products
-from ml.half_equations import get_half_equation
+from predict import predict_products
+from half_equations import get_half_equation
 from streamlit_lottie import st_lottie
-from utils.lottie_loader import load_lottie_url
+from lottie_loader import load_lottie_url
+from explanation_engine import get_explanation
+
 
 st.set_page_config(page_title="Electrolysis Made Easy", layout="centered")
 
@@ -50,14 +52,22 @@ if st.button("🔍 Predict Products"):
     # Optional: Reveal explanation (in next step we'll modularise this)
     if mode == "Student Mode":
         st.subheader("📘 Explanation")
-        st.info("Explanation coming soon...")
+        st.info(explanation = get_explanation(
+    cation=cation,
+    anion=anion,
+    concentration=concentration,
+    electrode_type=electrode_type,
+    state=state
+))
+st.markdown(explanation)
+
 
     # Visual learner support
-    st.subheader("🎥 Visual Reaction")
-    animation = load_lottie_url("https://assets4.lottiefiles.com/packages/lf20_ZX1C9T.json")  # Replace with more relevant later
-    if animation:
+st.subheader("🎥 Visual Reaction")
+animation = load_lottie_url("https://assets4.lottiefiles.com/packages/lf20_ZX1C9T.json")  # Replace with more relevant later
+if animation:
         st_lottie(animation, speed=1, height=300)
-    else:
+else:
         st.error("⚠️ Animation failed to load.")
 
 # --- Footer ---
