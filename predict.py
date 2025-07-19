@@ -2,6 +2,13 @@ import joblib
 import pandas as pd
 import os
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_DIR = os.path.join(BASE_DIR, "models")
+
+print("Looking for model at:", os.path.join(MODEL_DIR, "cathode_model.pkl"))
+print("Contents of model folder:", os.listdir(MODEL_DIR))
+
+
 # Dynamically determine the absolute path to the models directory
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODELS_DIR = os.path.join(BASE_DIR, "models")
