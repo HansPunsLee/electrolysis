@@ -1,7 +1,3 @@
-# Ignore model and data files
-/models/
-/data/
-
 # Python cache
 __pycache__/
 *.py[cod]
