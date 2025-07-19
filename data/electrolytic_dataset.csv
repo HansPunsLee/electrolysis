@@ -1,0 +1,65 @@
+electrolyte,cation,anion,concentration,electrode_type,state,cathode_product,anode_product,cathode_half_eq,anode_half_eq
+NaCl,Na⁺,Cl⁻,low,inert,aqueous,H₂,O₂,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')","('4OH⁻ → O₂ + 2H₂O + 4e⁻', 'O₂ + 2H₂O + 4e⁻ → 4OH⁻')"
+NaCl,Na⁺,Cl⁻,low,inert,molten,Na,Cl2,"('Na⁺ + e⁻ → Na', 'Na → Na⁺ + e⁻')",
+NaCl,Na⁺,Cl⁻,low,reactive,aqueous,H₂,O₂,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')","('4OH⁻ → O₂ + 2H₂O + 4e⁻', 'O₂ + 2H₂O + 4e⁻ → 4OH⁻')"
+NaCl,Na⁺,Cl⁻,low,reactive,molten,Na,Cl2,"('Na⁺ + e⁻ → Na', 'Na → Na⁺ + e⁻')",
+NaCl,Na⁺,Cl⁻,high,inert,aqueous,H₂,Cl2,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')",
+NaCl,Na⁺,Cl⁻,high,inert,molten,Na,Cl2,"('Na⁺ + e⁻ → Na', 'Na → Na⁺ + e⁻')",
+NaCl,Na⁺,Cl⁻,high,reactive,aqueous,H₂,Cl2,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')",
+NaCl,Na⁺,Cl⁻,high,reactive,molten,Na,Cl2,"('Na⁺ + e⁻ → Na', 'Na → Na⁺ + e⁻')",
+CuSO₄,Cu²⁺,SO₄²⁻,low,inert,aqueous,Cu²,O₂,,"('4OH⁻ → O₂ + 2H₂O + 4e⁻', 'O₂ + 2H₂O + 4e⁻ → 4OH⁻')"
+CuSO₄,Cu²⁺,SO₄²⁻,low,inert,molten,Cu²,SO₄²2,,
+CuSO₄,Cu²⁺,SO₄²⁻,low,reactive,aqueous,Cu²,Cu²,,
+CuSO₄,Cu²⁺,SO₄²⁻,low,reactive,molten,Cu²,SO₄²2,,
+CuSO₄,Cu²⁺,SO₄²⁻,high,inert,aqueous,Cu²,O₂,,"('4OH⁻ → O₂ + 2H₂O + 4e⁻', 'O₂ + 2H₂O + 4e⁻ → 4OH⁻')"
+CuSO₄,Cu²⁺,SO₄²⁻,high,inert,molten,Cu²,SO₄²2,,
+CuSO₄,Cu²⁺,SO₄²⁻,high,reactive,aqueous,Cu²,Cu²,,
+CuSO₄,Cu²⁺,SO₄²⁻,high,reactive,molten,Cu²,SO₄²2,,
+ZnCl₂,Zn²⁺,Cl⁻,low,inert,aqueous,H₂,O₂,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')","('4OH⁻ → O₂ + 2H₂O + 4e⁻', 'O₂ + 2H₂O + 4e⁻ → 4OH⁻')"
+ZnCl₂,Zn²⁺,Cl⁻,low,inert,molten,Zn²,Cl2,,
+ZnCl₂,Zn²⁺,Cl⁻,low,reactive,aqueous,H₂,Zn²,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')",
+ZnCl₂,Zn²⁺,Cl⁻,low,reactive,molten,Zn²,Cl2,,
+ZnCl₂,Zn²⁺,Cl⁻,high,inert,aqueous,H₂,Cl2,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')",
+ZnCl₂,Zn²⁺,Cl⁻,high,inert,molten,Zn²,Cl2,,
+ZnCl₂,Zn²⁺,Cl⁻,high,reactive,aqueous,H₂,Zn²,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')",
+ZnCl₂,Zn²⁺,Cl⁻,high,reactive,molten,Zn²,Cl2,,
+H₂SO₄,H⁺,SO₄²⁻,low,inert,aqueous,H₂,O₂,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')","('4OH⁻ → O₂ + 2H₂O + 4e⁻', 'O₂ + 2H₂O + 4e⁻ → 4OH⁻')"
+H₂SO₄,H⁺,SO₄²⁻,low,inert,molten,H,SO₄²2,,
+H₂SO₄,H⁺,SO₄²⁻,low,reactive,aqueous,H₂,O₂,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')","('4OH⁻ → O₂ + 2H₂O + 4e⁻', 'O₂ + 2H₂O + 4e⁻ → 4OH⁻')"
+H₂SO₄,H⁺,SO₄²⁻,low,reactive,molten,H,SO₄²2,,
+H₂SO₄,H⁺,SO₄²⁻,high,inert,aqueous,H₂,O₂,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')","('4OH⁻ → O₂ + 2H₂O + 4e⁻', 'O₂ + 2H₂O + 4e⁻ → 4OH⁻')"
+H₂SO₄,H⁺,SO₄²⁻,high,inert,molten,H,SO₄²2,,
+H₂SO₄,H⁺,SO₄²⁻,high,reactive,aqueous,H₂,O₂,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')","('4OH⁻ → O₂ + 2H₂O + 4e⁻', 'O₂ + 2H₂O + 4e⁻ → 4OH⁻')"
+H₂SO₄,H⁺,SO₄²⁻,high,reactive,molten,H,SO₄²2,,
+AgNO₃,Ag⁺,NO₃⁻,low,inert,aqueous,Ag,O₂,"('Ag⁺ + e⁻ → Ag', 'Ag → Ag⁺ + e⁻')","('4OH⁻ → O₂ + 2H₂O + 4e⁻', 'O₂ + 2H₂O + 4e⁻ → 4OH⁻')"
+AgNO₃,Ag⁺,NO₃⁻,low,inert,molten,Ag,NO₃2,"('Ag⁺ + e⁻ → Ag', 'Ag → Ag⁺ + e⁻')",
+AgNO₃,Ag⁺,NO₃⁻,low,reactive,aqueous,Ag,O₂,"('Ag⁺ + e⁻ → Ag', 'Ag → Ag⁺ + e⁻')","('4OH⁻ → O₂ + 2H₂O + 4e⁻', 'O₂ + 2H₂O + 4e⁻ → 4OH⁻')"
+AgNO₃,Ag⁺,NO₃⁻,low,reactive,molten,Ag,NO₃2,"('Ag⁺ + e⁻ → Ag', 'Ag → Ag⁺ + e⁻')",
+AgNO₃,Ag⁺,NO₃⁻,high,inert,aqueous,Ag,O₂,"('Ag⁺ + e⁻ → Ag', 'Ag → Ag⁺ + e⁻')","('4OH⁻ → O₂ + 2H₂O + 4e⁻', 'O₂ + 2H₂O + 4e⁻ → 4OH⁻')"
+AgNO₃,Ag⁺,NO₃⁻,high,inert,molten,Ag,NO₃2,"('Ag⁺ + e⁻ → Ag', 'Ag → Ag⁺ + e⁻')",
+AgNO₃,Ag⁺,NO₃⁻,high,reactive,aqueous,Ag,O₂,"('Ag⁺ + e⁻ → Ag', 'Ag → Ag⁺ + e⁻')","('4OH⁻ → O₂ + 2H₂O + 4e⁻', 'O₂ + 2H₂O + 4e⁻ → 4OH⁻')"
+AgNO₃,Ag⁺,NO₃⁻,high,reactive,molten,Ag,NO₃2,"('Ag⁺ + e⁻ → Ag', 'Ag → Ag⁺ + e⁻')",
+KBr,K⁺,Br⁻,low,inert,aqueous,H₂,O₂,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')","('4OH⁻ → O₂ + 2H₂O + 4e⁻', 'O₂ + 2H₂O + 4e⁻ → 4OH⁻')"
+KBr,K⁺,Br⁻,low,inert,molten,K,Br2,,
+KBr,K⁺,Br⁻,low,reactive,aqueous,H₂,O₂,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')","('4OH⁻ → O₂ + 2H₂O + 4e⁻', 'O₂ + 2H₂O + 4e⁻ → 4OH⁻')"
+KBr,K⁺,Br⁻,low,reactive,molten,K,Br2,,
+KBr,K⁺,Br⁻,high,inert,aqueous,H₂,Br2,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')",
+KBr,K⁺,Br⁻,high,inert,molten,K,Br2,,
+KBr,K⁺,Br⁻,high,reactive,aqueous,H₂,Br2,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')",
+KBr,K⁺,Br⁻,high,reactive,molten,K,Br2,,
+KI,K⁺,I⁻,low,inert,aqueous,H₂,O₂,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')","('4OH⁻ → O₂ + 2H₂O + 4e⁻', 'O₂ + 2H₂O + 4e⁻ → 4OH⁻')"
+KI,K⁺,I⁻,low,inert,molten,K,I2,,
+KI,K⁺,I⁻,low,reactive,aqueous,H₂,O₂,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')","('4OH⁻ → O₂ + 2H₂O + 4e⁻', 'O₂ + 2H₂O + 4e⁻ → 4OH⁻')"
+KI,K⁺,I⁻,low,reactive,molten,K,I2,,
+KI,K⁺,I⁻,high,inert,aqueous,H₂,I2,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')",
+KI,K⁺,I⁻,high,inert,molten,K,I2,,
+KI,K⁺,I⁻,high,reactive,aqueous,H₂,I2,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')",
+KI,K⁺,I⁻,high,reactive,molten,K,I2,,
+NaOH,Na⁺,OH⁻,low,inert,aqueous,H₂,O₂,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')","('4OH⁻ → O₂ + 2H₂O + 4e⁻', 'O₂ + 2H₂O + 4e⁻ → 4OH⁻')"
+NaOH,Na⁺,OH⁻,low,inert,molten,Na,OH2,"('Na⁺ + e⁻ → Na', 'Na → Na⁺ + e⁻')",
+NaOH,Na⁺,OH⁻,low,reactive,aqueous,H₂,O₂,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')","('4OH⁻ → O₂ + 2H₂O + 4e⁻', 'O₂ + 2H₂O + 4e⁻ → 4OH⁻')"
+NaOH,Na⁺,OH⁻,low,reactive,molten,Na,OH2,"('Na⁺ + e⁻ → Na', 'Na → Na⁺ + e⁻')",
+NaOH,Na⁺,OH⁻,high,inert,aqueous,H₂,O₂,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')","('4OH⁻ → O₂ + 2H₂O + 4e⁻', 'O₂ + 2H₂O + 4e⁻ → 4OH⁻')"
+NaOH,Na⁺,OH⁻,high,inert,molten,Na,OH2,"('Na⁺ + e⁻ → Na', 'Na → Na⁺ + e⁻')",
+NaOH,Na⁺,OH⁻,high,reactive,aqueous,H₂,O₂,"('2H⁺ + 2e⁻ → H₂', 'H₂ → 2H⁺ + 2e⁻')","('4OH⁻ → O₂ + 2H₂O + 4e⁻', 'O₂ + 2H₂O + 4e⁻ → 4OH⁻')"
+NaOH,Na⁺,OH⁻,high,reactive,molten,Na,OH2,"('Na⁺ + e⁻ → Na', 'Na → Na⁺ + e⁻')",
