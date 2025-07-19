@@ -52,14 +52,19 @@ if st.button("🔍 Predict Products"):
     # Optional: Reveal explanation (in next step we'll modularise this)
     if mode == "Student Mode":
         st.subheader("📘 Explanation")
-        st.info(explanation = get_explanation(
-    cation=cation,
-    anion=anion,
-    concentration=concentration,
-    electrode_type=electrode_type,
-    state=state
-))
-st.markdown(explanation)
+        explanation = get_explanation({
+            "cation": cation,
+            "anion": anion,
+            "concentration": concentration,
+            "electrode_type": electrode_type,
+            "state": state
+        })
+
+        if explanation:
+            st.info(explanation)
+        else:
+            st.warning("No explanation available for this combination yet.")
+
 
 
     # Visual learner support
