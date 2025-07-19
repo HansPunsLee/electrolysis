@@ -35,19 +35,57 @@ input_features = {
     "state": state
 }
 
-# --- Predict + Display ---
 if st.button("🔍 Predict Products"):
     cathode_product, anode_product = predict_products(input_features)
 
     st.success("✅ Prediction complete!")
 
-    st.subheader("🔬 Predicted Products")
-    st.markdown(f"**Cathode product:** {cathode_product}")
-    st.markdown(f"**Anode product:** {anode_product}")
+    if mode == "Student Mode":
+        st.subheader("🔬 Predicted Products")
+        st.markdown(f"**Cathode product:** {cathode_product}")
+        st.markdown(f"**Anode product:** {anode_product}")
 
-    st.subheader("⚗️ Half Equations")
-    st.markdown(f"**Cathode reaction:** {get_half_equation(cation)}")
-    st.markdown(f"**Anode reaction:** {get_half_equation(anion)}")
+        st.subheader("⚗️ Half Equations")
+        st.markdown(f"**Cathode reaction:** {get_half_equation(cation)}")
+        st.markdown(f"**Anode reaction:** {get_half_equation(anion)}")
+
+        st.subheader("📘 Explanation")
+        explanation = get_explanation({
+            "cation": cation,
+            "anion": anion,
+            "concentration": concentration,
+            "electrode_type": electrode_type,
+            "state": state
+        })
+
+        if explanation:
+            st.info(explanation)
+        else:
+            st.warning("No explanation available for this combination yet.")
+
+    elif mode == "Practice Mode":
+        st.subheader("📝 Your Answer")
+
+        # Student dropdowns
+        cathode_options = ["H₂", "Cu", "Ag", "Zn", "Na", "K", "none"]
+        anode_options = ["O₂", "Cl₂", "Br₂", "I₂", "none"]
+
+        user_cathode = st.selectbox("What is the **cathode product**?", options=cathode_options, key="user_cathode")
+        user_anode = st.selectbox("What is the **anode product**?", options=anode_options, key="user_anode")
+
+        if st.button("✅ Check Your Answer"):
+            st.subheader("🔎 Results")
+
+            if user_cathode.lower() == cathode_product.lower():
+                st.success("Cathode product is correct! ✅")
+            else:
+                st.error(f"Incorrect. The correct cathode product is **{cathode_product}**.")
+
+            if user_anode.lower() == anode_product.lower():
+                st.success("Anode product is correct! ✅")
+            else:
+                st.error(f"Incorrect. The correct anode product is **{anode_product}**.")
+
 
     # Optional: Reveal explanation (in next step we'll modularise this)
     if mode == "Student Mode":
@@ -69,11 +107,14 @@ if st.button("🔍 Predict Products"):
 
     # Visual learner support
 st.subheader("🎥 Visual Reaction")
-animation = load_lottie_url("https://assets4.lottiefiles.com/packages/lf20_ZX1C9T.json")  # Replace with more relevant later
+fallback_animation_url = "https://assets10.lottiefiles.com/packages/lf20_jcikwtux.json"  # Safe science-style animation
+
+animation = load_lottie_url(fallback_animation_url)
 if animation:
-        st_lottie(animation, speed=1, height=300)
+    st_lottie(animation, speed=1, height=300)
 else:
-        st.error("⚠️ Animation failed to load.")
+    st.error("⚠️ Animation failed to load.")
+
 
 # --- Footer ---
 st.markdown("---")
