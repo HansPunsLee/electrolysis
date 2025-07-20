@@ -101,24 +101,6 @@ if st.session_state.get("predicted", False):
                 st.error(f"Incorrect. The correct anode product is **{anode_product}**.")
 
 
-
-    # Optional: Reveal explanation (in next step we'll modularise this)
-    if mode == "Student Mode":
-        st.subheader("📘 Explanation")
-        explanation = get_explanation(
-    cation=cation,
-    anion=anion,
-    concentration=concentration,
-    electrode_type=electrode_type,
-    state=state
-)
-        if explanation:
-            st.info(explanation)
-        else:
-            st.warning("No explanation available for this combination yet.")
-
-
-
     # Visual learner support
 st.subheader("🎥 Visual Reaction")
 fallback_animation_url = "https://assets10.lottiefiles.com/packages/lf20_jcikwtux.json"  # Safe science-style animation
