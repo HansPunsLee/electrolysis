@@ -64,7 +64,7 @@ if st.button("🔍 Predict Products"):
         else:
             st.warning("No explanation available for this combination yet.")
 
-       elif mode == "Practice Mode":
+        elif mode == "Practice Mode":
         st.subheader("📝 Your Answer")
 
         # Student dropdowns
@@ -102,8 +102,6 @@ if st.button("🔍 Predict Products"):
     electrode_type=electrode_type,
     state=state
 )
-
-
         if explanation:
             st.info(explanation)
         else:
