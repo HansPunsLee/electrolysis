@@ -38,26 +38,16 @@ input_features = {
 # --- Predict + Display ---
 st.header("📲 Results & Feedback")
 
-def format_ion_latex(ion):
-    replacements = {
-        "⁺": "+",
-        "⁻": "-",
-        "²": "2",
-        "³": "3",
-        "₄": "4",
-        "₂": "2"
-        # add more as needed
-    }
-    plain = "".join(replacements.get(c, c) for c in ion)
-    
-    if "⁺" in ion or "²" in ion or "³" in ion:
-        # likely cation
-        if plain[-1] in "+-":
-            return f"{plain[:-1]}^{{{plain[-1]}}}"
-        return f"{plain}"
-    if "⁻" in ion:
-        return f"{plain}^{{-}}"
-    return plain
+def to_subscript(text):
+    subscript_map = str.maketrans("0123456789", "₀₁₂₃₄₅₆₇₈₉")
+    result = ""
+    for i, char in enumerate(text):
+        if i > 0 and char.isdigit():
+            result += char.translate(subscript_map)
+        else:
+            result += char
+    return result
+
 
 
 if st.button("🔍 Predict Products"):
@@ -74,9 +64,8 @@ if st.session_state.get("predicted", False):
     st.success("✅ Prediction complete!")
 
     st.subheader("🔬 Predicted Products")
-    st.latex(f"\\text{{Cathode product: }}\\ {format_ion_latex(cathode_product)}")
-    st.latex(f"\\text{{Anode product: }}\\ {format_ion_latex(anode_product)}")
-
+    st.markdown(f"**Cathode product:** {to_subscript(cathode_product)}")
+    st.markdown(f"**Anode product:** {to_subscript(anode_product)}")
 
     st.subheader("⚗️ Half Equations")
     st.markdown(f"**Cathode reaction:** {get_half_equation(cathode_product)}")
