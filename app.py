@@ -35,36 +35,46 @@ input_features = {
     "state": state
 }
 
+# --- Predict + Display ---
+st.header("📲 Results & Feedback")
+
 if st.button("🔍 Predict Products"):
     cathode_product, anode_product = predict_products(input_features)
 
+    st.session_state.predicted = True
+    st.session_state.cathode_product = cathode_product
+    st.session_state.anode_product = anode_product
+
+if st.session_state.get("predicted", False):
+    cathode_product = st.session_state.cathode_product
+    anode_product = st.session_state.anode_product
+
     st.success("✅ Prediction complete!")
 
+    st.subheader("🔬 Predicted Products")
+    st.markdown(f"**Cathode product:** {cathode_product}")
+    st.markdown(f"**Anode product:** {anode_product}")
+
+    st.subheader("⚗️ Half Equations")
+    st.markdown(f"**Cathode reaction:** {get_half_equation(cation)}")
+    st.markdown(f"**Anode reaction:** {get_half_equation(anion)}")
+
     if mode == "Student Mode":
-        st.subheader("🔬 Predicted Products")
-        st.markdown(f"**Cathode product:** {cathode_product}")
-        st.markdown(f"**Anode product:** {anode_product}")
-
-        st.subheader("⚗️ Half Equations")
-        st.markdown(f"**Cathode reaction:** {get_half_equation(cation)}")
-        st.markdown(f"**Anode reaction:** {get_half_equation(anion)}")
-
         st.subheader("📘 Explanation")
         explanation = get_explanation(
-    cation=cation,
-    anion=anion,
-    concentration=concentration,
-    electrode_type=electrode_type,
-    state=state
-)
-
+            cation=cation,
+            anion=anion,
+            concentration=concentration,
+            electrode_type=electrode_type,
+            state=state
+        )
 
         if explanation:
             st.info(explanation)
         else:
             st.warning("No explanation available for this combination yet.")
 
-        elif mode == "Practice Mode":
+    elif mode == "Practice Mode":
         st.subheader("📝 Your Answer")
 
         # Student dropdowns
@@ -75,9 +85,9 @@ if st.button("🔍 Predict Products"):
         user_anode = st.selectbox("What is the **anode product**?", options=anode_options, key="user_anode")
 
         if st.button("✅ Check Your Answer"):
-            st.session_state.show_results = True
+            st.session_state.checked = True
 
-        if st.session_state.get("show_results", False):
+        if st.session_state.get("checked", False):
             st.subheader("🔎 Results")
 
             if user_cathode.lower() == cathode_product.lower():
