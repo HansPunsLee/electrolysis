@@ -56,8 +56,8 @@ if st.session_state.get("predicted", False):
     st.markdown(f"**Anode product:** {anode_product}")
 
     st.subheader("⚗️ Half Equations")
-    st.markdown(f"**Cathode reaction:** {get_half_equation(cation)}")
-    st.markdown(f"**Anode reaction:** {get_half_equation(anion)}")
+    st.markdown(f"**Cathode reaction:** {get_half_equation(cathode_product)}")
+    st.markdown(f"**Anode reaction:** {get_half_equation(anode_product)}")
 
     if mode == "Student Mode":
         st.subheader("📘 Explanation")
