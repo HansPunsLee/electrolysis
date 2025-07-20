@@ -38,6 +38,28 @@ input_features = {
 # --- Predict + Display ---
 st.header("📲 Results & Feedback")
 
+def format_ion_latex(ion):
+    replacements = {
+        "⁺": "+",
+        "⁻": "-",
+        "²": "2",
+        "³": "3",
+        "₄": "4",
+        "₂": "2"
+        # add more as needed
+    }
+    plain = "".join(replacements.get(c, c) for c in ion)
+    
+    if "⁺" in ion or "²" in ion or "³" in ion:
+        # likely cation
+        if plain[-1] in "+-":
+            return f"{plain[:-1]}^{{{plain[-1]}}}"
+        return f"{plain}"
+    if "⁻" in ion:
+        return f"{plain}^{{-}}"
+    return plain
+
+
 if st.button("🔍 Predict Products"):
     cathode_product, anode_product = predict_products(input_features)
 
@@ -52,8 +74,9 @@ if st.session_state.get("predicted", False):
     st.success("✅ Prediction complete!")
 
     st.subheader("🔬 Predicted Products")
-    st.markdown(f"**Cathode product:** {cathode_product}")
-    st.markdown(f"**Anode product:** {anode_product}")
+    st.latex(f"\\text{{Cathode product: }}\\ {format_ion_latex(cathode_product)}")
+    st.latex(f"\\text{{Anode product: }}\\ {format_ion_latex(anode_product)}")
+
 
     st.subheader("⚗️ Half Equations")
     st.markdown(f"**Cathode reaction:** {get_half_equation(cathode_product)}")
