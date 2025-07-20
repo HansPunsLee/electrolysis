@@ -50,13 +50,14 @@ if st.button("🔍 Predict Products"):
         st.markdown(f"**Anode reaction:** {get_half_equation(anion)}")
 
         st.subheader("📘 Explanation")
-        explanation = get_explanation({
-            "cation": cation,
-            "anion": anion,
-            "concentration": concentration,
-            "electrode_type": electrode_type,
-            "state": state
-        })
+        explanation = get_explanation(
+    cation=cation,
+    anion=anion,
+    concentration=concentration,
+    electrode_type=electrode_type,
+    state=state
+)
+
 
         if explanation:
             st.info(explanation)
