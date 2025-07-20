@@ -64,7 +64,7 @@ if st.button("🔍 Predict Products"):
         else:
             st.warning("No explanation available for this combination yet.")
 
-    elif mode == "Practice Mode":
+       elif mode == "Practice Mode":
         st.subheader("📝 Your Answer")
 
         # Student dropdowns
@@ -75,6 +75,9 @@ if st.button("🔍 Predict Products"):
         user_anode = st.selectbox("What is the **anode product**?", options=anode_options, key="user_anode")
 
         if st.button("✅ Check Your Answer"):
+            st.session_state.show_results = True
+
+        if st.session_state.get("show_results", False):
             st.subheader("🔎 Results")
 
             if user_cathode.lower() == cathode_product.lower():
@@ -88,16 +91,18 @@ if st.button("🔍 Predict Products"):
                 st.error(f"Incorrect. The correct anode product is **{anode_product}**.")
 
 
+
     # Optional: Reveal explanation (in next step we'll modularise this)
     if mode == "Student Mode":
         st.subheader("📘 Explanation")
-        explanation = get_explanation({
-            "cation": cation,
-            "anion": anion,
-            "concentration": concentration,
-            "electrode_type": electrode_type,
-            "state": state
-        })
+        explanation = get_explanation(
+    cation=cation,
+    anion=anion,
+    concentration=concentration,
+    electrode_type=electrode_type,
+    state=state
+)
+
 
         if explanation:
             st.info(explanation)
