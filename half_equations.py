@@ -23,7 +23,7 @@ def get_half_equation(species):
         "Cu": "Cu²⁺ + 2e⁻ → Cu",
         "Ag": "Ag⁺ + e⁻ → Ag",
         "Zn": "Zn²⁺ + 2e⁻ → Zn",
-        "Na": "Na⁺ + e⁻ → Na"
+        "Na": "Na⁺ + e⁻ → Na",
 
         "Cl₂": "2Cl⁻ → Cl₂ + 2e⁻",
         "Br₂": "2Br⁻ → Br₂ + 2e⁻",
